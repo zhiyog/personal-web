@@ -1,0 +1,99 @@
+.thanks{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 确保 mode 在顶部 */
+    width: 75%;
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto;
+    text-align: center;
+    color: var(--headerFont2);
+    
+}
+
+.thanks-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+}
+.thanks-words {
+    border-radius: 10px;
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: left;
+    transition: background-color 0.5s ease; /* 添加平滑过渡效果 */
+}
+
+.thanks-words:hover {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #fff;
+    background-color: #00283A; /* 鼠标悬停时的背景色 */
+    color: white; /* 可选：文字颜色变白，确保可见 */
+}
+
+.thanks-box{
+    justify-content: space-between; /* 两个图表左右对齐，自动分布 */
+    margin-top: 20px;
+    gap: 20px; /* 设置元素之间的间距 */
+    width:100%;
+    flex-wrap: wrap; /* 自动换行 */
+    display: flex; /* 让两个图表并排 */
+    align-items: flex-start; /* 对齐到顶部 */
+}
+.thanks-box .uploader-details:first-child{
+    margin-left: 30px;
+}
+
+.thanks-box .uploader-details:last-child{
+    margin-right: 70px;
+}
+
+
+.thanks-box .uploader-details p{
+    font-size: 14px;
+    font-weight: 500; /* 中等粗细 */
+    color: #333; /* 更柔和的颜色 */
+}
+.thanks-box .uploader-details span{
+    font-size: 20px;
+    font-family: 'Arial', sans-serif; /* 使用 Arial，简洁现代 */
+    font-weight: bold;
+}
+.thanks-box .uploader-details{
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--headerFont2);
+    transition: background-color 0.5s ease;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    align-items: left;
+    text-align: left; 
+}
+
+.thanks-box .uploader-details:hover{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #fff;
+    background-color: #00283A;
+    color: #fff;
+    p{
+        color: #fff;
+    }
+}
+
+
+.thanks-box .uploader-details img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.footer{
+    font-size: 14px;
+    text-align: center;
+    margin: 30px 0;
+    color: var(--headerFont2);
+}

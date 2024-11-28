@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/login.css" />
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="box">
+    <div class="content">
+      <h2>Login</h2>
+      <div>
+        <input type="text" placeholder="username" id="username" />
+      </div>
+      <div>
+        <input type="password" placeholder="password" id="password" />
+      </div>
+
+      <div>
+        <input type="submit" value="submit" id="submit" />
+      </div>
+    </div>
+
+    <a href="/" class="btns" style="font-size: 22px">home</a>
+    <a class="btns register">hello</a>
+  </div>
+</body>
+<script>
+  // 获取用户输入
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
+  const submitBtn = document.getElementById('submit');
+
+  // 提交事件
+  submitBtn.addEventListener('click', () => {
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+    // 校验输入并发送到服务器
+    fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })//请求体，包含登录数据
+    })
+      .then(response => response.json())
+      .then(data => {
+
+        if (data.success) {
+          // 登录成功，跳转到编辑页面
+          window.location.href = '/edit.html';
+        } else {
+          alert(data.message);
+        }
+      })
+
+  });
+</script>
+
+</html>

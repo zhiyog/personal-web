@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zhiyog</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/statistics.css">
+  <link rel="stylesheet" href="./css/map.css">
+  <link rel="stylesheet" href="./css/fun.css">
+  <link rel="stylesheet" href="./css/thanks.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+
+<body>
+  <!-- 编辑按钮 -->
+  <button id="edit-button">✎ Edit</button>
+  <style>
+    #edit-button {
+      position: fixed;
+      /* 固定位置 */
+      bottom: 20px;
+      /* 距离底部 20px */
+      right: 20px;
+      /* 距离右侧 20px */
+      background-color: #00b7ff;
+      /* 背景色 */
+      color: white;
+      /* 字体颜色 */
+      border: none;
+      /* 去掉边框 */
+      border-radius: 50px;
+      /* 圆角按钮 */
+      padding: 10px 20px;
+      /* 按钮内边距 */
+      font-size: 16px;
+      /* 字体大小 */
+      cursor: pointer;
+      /* 鼠标悬停变为手势 */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* 添加阴影 */
+      transition: all 0.3s ease;
+      /* 动态效果 */
+    }
+
+    #edit-button:hover {
+      transform: scale(1.2);
+      /* 放大效果 */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      /* 悬停时更明显的阴影 */
+    }
+  </style>
+
+  <!-- 主要页面 -->
+  <div class="box">
+    <!-- 顶部栏 -->
+    <div class="header" id="navbar">
+      <div class="nav">
+        <a href="#zhiyog" class="zhiyog-link">zhiyog</a>
+        <a href="#statistics">Statistics</a>
+        <a href="#maps">Maps</a>
+        <a href="#fun">Fun</a>
+        <a href="#thanks">Thanks</a>
+        <div class="logo">
+          <a href="https://github.com/zhiyog" target="_blank" title="GitHub">
+            <svg t="1731590257918" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="7890" width="200" height="200">
+              <path
+                d="M512 85.333333C276.266667 85.333333 85.333333 276.266667 85.333333 512a426.410667 426.410667 0 0 0 291.754667 404.821333c21.333333 3.712 29.312-9.088 29.312-20.309333 0-10.112-0.554667-43.690667-0.554667-79.445333-107.178667 19.754667-134.912-26.112-143.445333-50.133334-4.821333-12.288-25.6-50.133333-43.733333-60.288-14.933333-7.978667-36.266667-27.733333-0.554667-28.245333 33.621333-0.554667 57.6 30.933333 65.621333 43.733333 38.4 64.512 99.754667 46.378667 124.245334 35.2 3.754667-27.733333 14.933333-46.378667 27.221333-57.045333-94.933333-10.666667-194.133333-47.488-194.133333-210.688 0-46.421333 16.512-84.778667 43.733333-114.688-4.266667-10.666667-19.2-54.4 4.266667-113.066667 0 0 35.712-11.178667 117.333333 43.776a395.946667 395.946667 0 0 1 106.666667-14.421333c36.266667 0 72.533333 4.778667 106.666666 14.378667 81.578667-55.466667 117.333333-43.690667 117.333334-43.690667 23.466667 58.666667 8.533333 102.4 4.266666 113.066667 27.178667 29.866667 43.733333 67.712 43.733334 114.645333 0 163.754667-99.712 200.021333-194.645334 210.688 15.445333 13.312 28.8 38.912 28.8 78.933333 0 57.045333-0.554667 102.912-0.554666 117.333334 0 11.178667 8.021333 24.490667 29.354666 20.224A427.349333 427.349333 0 0 0 938.666667 512c0-235.733333-190.933333-426.666667-426.666667-426.666667z"
+                fill="#e6e6e6" p-id="7891"></path>
+            </svg> </a>
+          <a href="https://space.bilibili.com/3546746441436016" target="_blank" title="Bilibili">
+            <svg t="1731590503963" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="12661" width="200" height="200">
+              <path
+                d="M977.2 208.2c33.4 36.2 48.8 79.4 46.6 131.4v404.8c-0.8 52.8-18.4 96.2-53 130.2-34.4 34-78.2 51.8-131 53.4H184.04c-52.9-1.6-96.42-19.6-130.56-54.4C19.364 838.8 1.534 793 0 736.4V339.6c1.534-52 19.364-95.2 53.48-131.4 34.14-32.7 77.66-50.66 130.56-52.2h58.76l-50.7-51.62c-11.5-11.46-17.26-26-17.26-43.58 0-17.6 5.76-32.12 17.26-43.594C203.6 5.736 218.2 0 235.8 0s32.2 5.736 43.8 17.206L426.2 156h176l149-138.794C763.4 5.736 778.4 0 796 0c17.6 0 32.2 5.736 43.8 17.206C851.2 28.68 857 43.2 857 60.8c0 17.58-5.8 32.12-17.2 43.58L789.2 156h58.6c52.8 1.54 96 19.5 129.4 52.2z m-77.6 139.4c-0.8-19.2-7.4-34.8-21.4-47-10.4-12.2-28-18.8-45.4-19.6H192.1c-19.18 0.8-34.9 7.4-47.16 19.6-12.28 12.2-18.8 27.8-19.56 47v388.8c0 18.4 6.52 34 19.56 47S173.7 803 192.1 803h640.7c18.4 0 34-6.6 46.6-19.6 12.6-13 19.4-28.6 20.2-47V347.6zM371 433c12.6 12.6 19.4 28.2 20.2 46.4V546c-0.8 18.4-7.4 33.8-19.6 46.4-12.4 12.6-28 19-47.2 19-19.2 0-35-6.4-47.2-19-12.2-12.6-18.8-28-19.6-46.4v-66.6c0.8-18.2 7.6-33.8 20.2-46.4 12.6-12.6 26.4-19.2 46.6-20 18.4 0.8 34 7.4 46.6 20z m383 0c12.6 12.6 19.4 28.2 20.2 46.4V546c-0.8 18.4-7.4 33.8-19.6 46.4-12.2 12.6-28 19-47.2 19-19.2 0-34.8-6.4-47.2-19-14-12.6-18.8-28-19.4-46.4v-66.6c0.6-18.2 7.4-33.8 20-46.4 12.6-12.6 28.2-19.2 46.6-20 18.4 0.8 34 7.4 46.6 20z"
+                p-id="12662" fill="#ffffff"></path>
+            </svg> </a>
+          <a href="https://www.douyin.com/user/self?from_tab_name=main&showTab=post" target="_blank" title="Tiktok"">
+                <svg t=" 1731590470205" class="icon" viewBox="0 0 1024 1024" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" p-id="11611" width="200" height="200">
+            <path
+              d="M384 853.333333a42.666667 42.666667 0 0 1 0 85.333334H341.333333a256 256 0 0 1-256-256v-42.666667a42.666667 42.666667 0 0 1 85.333334 0v42.666667a170.666667 170.666667 0 0 0 170.666666 170.666666h42.666667z m-213.333333-341.333333a42.666667 42.666667 0 0 1-85.333334 0V341.333333a256 256 0 0 1 256-256h341.333334a256 256 0 0 1 256 256v341.333334a256 256 0 0 1-256 256h-170.666667a42.666667 42.666667 0 0 1 0-85.333334h170.666667a170.666667 170.666667 0 0 0 170.666666-170.666666V341.333333a170.666667 170.666667 0 0 0-170.666666-170.666666H341.333333a170.666667 170.666667 0 0 0-170.666666 170.666666v170.666667z m426.666666-213.333333a85.333333 85.333333 0 0 0 85.333334 85.333333h25.6c9.386667 0 17.066667 7.68 17.066666 17.066667v51.2a17.066667 17.066667 0 0 1-17.066666 17.066666H682.666667a169.898667 169.898667 0 0 1-85.333334-22.826666V618.666667a149.333333 149.333333 0 1 1-149.333333-149.333334h4.266667c9.386667 0 17.066667 7.68 17.066666 17.066667v51.2a17.066667 17.066667 0 0 1-17.066666 17.066667h-4.266667a64 64 0 1 0 64 64V273.066667c0-9.386667 7.68-17.066667 17.066667-17.066667h51.2c9.386667 0 17.066667 7.68 17.066666 17.066667V298.666667z"
+              fill="#ffffff" p-id="11612"></path></svg>
+          </a>
+          <a href="https://blog.csdn.net/2201_75317009?spm=1010.2135.3001.5343" target="_blank" title="csdn">
+            <svg t="1731590422285" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              p-id="9506" width="200" height="200">
+              <path
+                d="M512 0c282.784 0 512 229.216 512 512s-229.216 512-512 512S0 794.784 0 512 229.216 0 512 0z m189.952 752l11.2-108.224c-31.904 9.536-100.928 16.128-147.712 16.128-134.464 0-205.728-47.296-195.328-146.304 11.584-110.688 113.152-145.696 232.64-145.696 54.784 0 122.432 8.8 151.296 18.336L768 272.704C724.544 262.24 678.272 256 599.584 256c-203.2 0-388.704 94.88-406.4 263.488C178.336 660.96 303.584 768 535.616 768c80.672 0 138.464-6.432 166.336-16z"
+                fill="#ffffff" p-id="9507"></path>
+            </svg> </a>
+        </div>
+      </div>
+    </div>
+
+
+    <section id="zhiyog" class="content-container-transition">
+      <div class="navigation">
+        <div class="nav-titleBox co zz">
+          <!-- 占位符 -->
+          <div class="co-left"></div>
+          <!-- 标题 -->
+          <div class="co-right ">
+            <h1>
+              Hello<br>
+              I am zhiyog!
+            </h1>
+            <a class="buttom navbtn">learn more
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- 主要内容 -->
+    <div class="container content" id="content">
+      <!-- 占位符 -->
+      <div class="co-left">
+        <!-- 简历吸盘 -->
+        <div class="me-card carbox borderbefore" id="mycard">
+          <div class="mecar-title">
+            <div class="me-image">
+              <span class="status">
+                <i>zhiyog</i>
+              </span>
+              <img alt="zhiyog" id="index_head_picture">
+            </div>
+            <script>
+              const headPicture = document.getElementById("index_head_picture")
+              const headPictureSrc = localStorage.getItem("headPictureSrc");
+              if (headPictureSrc) {
+                headPicture.src = headPictureSrc;
+
+              } else {
+                headPicture.src = "./img/head_picture.png";
+              }
+            </script>
+            <h3>zhiyogのbiographical notes</h3>
+            <p class="me-hover">
+              <span id="hover-text"></span>
+              <script>
+                const hoverText = document.getElementById("hover-text");
+                if (localStorage.getItem('textContent')) {
+                  hoverText.textContent = localStorage.getItem('textContent');
+                } else {
+                  hoverText.textContent = "Dreaming of being free!"
+                }
+              </script>
+            </p>
+          </div>
+
+          <!-- 毕业院校 -->
+          <div class="borderbotm"></div>
+          <div class="mecar-bottm">
+            <div>
+              <span class="mecarbottm-key">University</span>
+              <span class="mecarbottm-value">CSU</span>
+            </div>
+            <div>
+              <span class="mecarbottm-key">Grade</span>
+              <span class="mecarbottm-value">2022</span>
+            </div>
+            <div>
+              <span class="mecarbottm-key">Position</span>
+              <span class="mecarbottm-value">changsha</span>
+            </div>
+            <div>
+              <span class="mecarbottm-key">Career</span>
+              <span class="mecarbottm-value">Front-end Engineer</span>
+            </div>
+
+            <div>
+              <span class="mecarbottm-key">Email</span>
+              <span class="mecarbottm-value">3550245033@qq.com</span>
+            </div>
+          </div>
+
+          <div class="borderbotm"></div>
+          <div class="buttom-box ">
+            <a class="button" href="Mailto:3550245033@qq.com?Subject=title&amp;Body=content">Contact me!</a>
+          </div>
+          <div id="visit-count">
+          </div>
+          <script>
+            fetch('/api/visit-count')
+              .then(response => response.json())
+              .then(data => {
+                // 获取成功后更新页面内容
+                const countDisplay = document.getElementById('visit-count');
+                countDisplay.textContent = `Visit Count: ${data.visitCount}`;
+              })
+              .catch(error => {
+                console.error('Error fetching count:', error);
+              });
+
+            // 更新计数
+            fetch('/api/increment-visit', { method: 'POST' });
+          </script>
+
+        </div>
+      </div>
+
+      <!-- 右边 -->
+      <div class="co-right" id="next-one">
+        <!-- 完成项目 -->
+        <div class="content-li li1">
+          <div class="li1-box borderbefore">
+            <span>Projects</span><span class="tag">↓</span>
+            <div class="borderbotm"></div>
+            <div class="list-items" id="projects-list"></div>
+          </div>
+          <div class="li1-box borderbefore">
+            <span>Code Stacks</span><span class="tag">↓</span>
+            <div class="borderbotm"></div>
+            <div class="list-items" id="codeStacks-list"></div>
+          </div>
+          <div class="li1-box borderbefore">
+            <span>Awards</span><span class="tag">↓</span>
+            <div class="borderbotm"></div>
+            <div class="list-items" id="awards-list"></div>
+          </div>
+          <script>
+            // 加载列表数据并渲染
+            function loadList() {
+            const categories = ['projects', 'codeStacks', 'awards'];
+            categories.forEach(category => {
+                const list = JSON.parse(localStorage.getItem(category)) || initialData[category];
+                console.log(list); // 检查 list 是否正确获取
+                const listContainer = document.getElementById(`${category}-list`);
+                listContainer.innerHTML = ''; // 清空现有列表
+
+                list
+                    .filter(item => typeof item === 'string') // 筛选出字符串类型的数据
+                    .forEach(item => {
+                        const p = document.createElement('p');
+                        p.textContent = item; // 显示项目名称
+                        listContainer.appendChild(p);
+                    });
+            });
+        }
+
+        // 页面加载时渲染列表
+        window.onload = function() {
+            loadList(); // 页面加载完成后调用 loadList
+        };
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="content-li li2">
+      <h3>
+        <div class="borderbotm2"></div>
+      </h3>
+      <div class="carbox li2-box">
+        <blockquote id="quote">
+        </blockquote>
+        <script>
+          const quote = document.getElementById("quote");
+          if (localStorage.getItem('textQuote')) {
+            quote.textContent = localStorage.getItem('textQuote');
+          } else {
+            quote.textContent = "I hope I could keep advancing and let my life shine as a precious stone.and let my life shine as aprecious stone."
+          }
+        </script>
+      </div>
+    </div>
+
+    <!-- 数据图表 -->
+
+    <div class="statistics" id="statistics">
+      <div class="mode">Statistics</div>
+      <div class="statistics-main">
+        <div class="statistics-box">
+          <h2>Time Allocation</h2>
+          <div id="chart" style="width: 500px; height: 400px;"></div>
+        </div>
+
+        <div class="statistics-box">
+          <h2>Proportion of Browsers</h2>
+          <div id="chart2" style="width: 500px; height: 400px;"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- 地图 -->
+    <div class="maps" id="maps">
+      <div class="mode">Maps</div>
+      <div class="map" id="map"></div>
+      <script type="text/javascript">
+        window._AMapSecurityConfig = {
+          securityJsCode: "89b596490cca6364101b36c2d45e9f3e",
+        }
+      </script>
+      <script src="https://webapi.amap.com/loader.js"></script>
+      <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=2.0&key=dbcb618758ba071072471d12ea02dcb8"></script>
+      <script type="text/javascript">
+        var map = new AMap.Map('map', { // 修改这里为 'map'
+          resizeEnable: true,
+          center: [113.0795, 34.9412],
+          zoom: 12
+        });
+        AMap.plugin('AMap.Weather', function () {
+          var weather = new AMap.Weather();
+          // 查询实时天气信息
+          weather.getLive('温县', function (err, data) {
+            if (!err) {
+              var str = [];
+              str.push('<h4>实时天气</h4><hr>');
+              str.push('<p>城市/区：' + data.city + '</p>');
+              str.push('<p>天气：' + data.weather + '</p>');
+              str.push('<p>温度：' + data.temperature + '℃</p>');
+              str.push('<p>风向：' + data.windDirection + '</p>');
+              str.push('<p>风力：' + data.windPower + ' 级</p>');
+              str.push('<p>空气湿度：' + data.humidity + '</p>');
+              str.push('<p>发布时间：' + data.reportTime + '</p>');
+              var marker = new AMap.Marker({
+                map: map,
+                position: map.getCenter(),
+                icon: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png', // 默认蓝色标记图标 
+                offset: new AMap.Pixel(-13, -30) // 偏移量调整，使图标中心对准位置
+              });
+              var infoWin = new AMap.InfoWindow({
+                content: '<div class="info">' + str.join('') + '</div>',
+                isCustom: true,
+
+              });
+              infoWin.open(map, marker.getPosition());
+              marker.on('mouseover', function () {
+                infoWin.open(map, marker.getPosition());
+              });
+            }
+          });
+        });
+      </script>
+
+    </div>
+
+    <!-- 娱乐 -->
+    <div class="fun" id="fun">
+      <div class="mode">Fun</div>
+      <div class="fun-main">
+        <div class="fun-box">
+          <img src="./img/game/time.jpg" alt="fun" class="game">
+          <img src="./img/game/game.jpg" alt="fun" class="game">
+
+          <img src="./img/game/price.jpg" alt="fun" class="game">
+          <img src="./img/music/music3.jpg" alt="fun" class="music">
+          <img src="./img/music/music_2023.jpg" alt="fun" class="music">
+          <img src="./img/music/music_gen.jpg" alt="fun" class="music">
+        </div>
+      </div>
+    </div>
+
+    <!-- 感谢 -->
+    <div class="thanks" id="thanks">
+      <div class="mode">Thanks</div>
+      <div class="thanks-main">
+        <div class="thanks-words">
+          <h1>I really like some uploaders who share their own opinions, and I am happy to read the blogs of some
+            seniors, although many seniors have stopped updating or the blogs are from several years ago.</h1>
+        </div>
+        <div class="thanks-box">
+          <!-- up主 -->
+          <div class="uploaders">
+
+            <!-- 数字游牧人 -->
+            <a href="https://qzq.at" target="_blank">
+              <div class="uploader-details">
+                <img src="./img/thanks/数字游牧人.png" alt="数字游牧人">
+                <span class="span1">数字游牧人</span>
+                <p>Former Microsoft engineer, digital nomad in web3</p>
+              </div>
+            </a>
+
+            <!-- 雯ww63 -->
+            <a href="https://space.bilibili.com/3493137471244811/?spm_id_from=333.999.0.0" target="_blank">
+              <div class="uploader-details">
+                <img src="./img/thanks/雯ww63.png" alt="雯ww63">
+                <span class="span1">雯ww63</span>
+                <p>Java Developer, is willing to share his experience</p>
+              </div>
+            </a>
+
+            <!-- 努力的但丁 -->
+            <a href="https://space.bilibili.com/89821082/?spm_id_from=333.999.0.0" target="_blank">
+              <div class="uploader-details">
+                <img src="./img/thanks/努力的但丁.png" alt="努力的但丁">
+                <span class="span1">努力的但丁</span>
+                <p>Frontend develpoer, his Internship experience is helpful</p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <!-- 小毛毛熊丶 -->
+            <a href="https://space.bilibili.com/177984856/?spm_id_from=333.999.0.0" target="_blank">
+              <div class="uploader-details">
+                <img src="./img/thanks/小毛毛熊.png" alt="小毛毛熊丶">
+                <span class="span1">小毛毛熊丶</span>
+                <p>Frontend develpoer, bloger, graduated from SJTU</p>
+              </div>
+            </a>
+
+            <!-- 白泽talk -->
+            <a href="https://space.bilibili.com/10399934/?spm_id_from=333.999.0.0" target="_blank">
+              <div class="uploader-details">
+                <img src="./img/thanks/白泽.png" alt="白泽talk">
+                <span class="span1">白泽talk</span>
+                <p>Golang develpoer, enthusiastic about open source</p>
+              </div>
+            </a>
+
+            <!-- 英雄哪里出来 -->
+            <a href="https://space.bilibili.com/319521269/?spm_id_from=333.999.0.0" target="_blank">
+              <div class="uploader-details">
+                <img src="./img/thanks/英雄哥.png" alt="英雄哪里出来">
+                <span class="span1">英雄哪里出来</span>
+                <p>C++ engineer, game developer</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>Copyright © 2024 zhiyog</p>
+    <p>Powered by zhiyog</p>
+  </footer>
+
+</body>
+
+<script src="./js/e-charts.js"></script>
+<script src="./js/e-charts2.js"></script>
+<script src="./js/login.js"></script>
+
+</html>

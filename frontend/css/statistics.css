@@ -1,0 +1,80 @@
+.statistics {
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 确保 mode 在顶部 */
+    width: 75%;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--headerFont2);
+}
+
+.statistics-main {
+    flex-wrap: wrap; /* 自动换行 */
+    display: flex; /* 让两个图表并排 */
+    justify-content: space-around; /* 两个图表左右分布 */
+    align-items: flex-start; /* 对齐到顶部 */
+    margin-top: 20px;
+}
+
+.statistics-box {
+    display: flex;
+    flex-direction: column; /* 纵向排列 h2 和图表 */
+    align-items: center;
+    margin: 0 20px; /* 控制图表之间的间距 */
+    flex: 1; /* 确保两个图表均分宽度 */
+    flex: 1 1 calc(50% - 40px); /* 初始宽度 50%，减去间距 */
+}
+
+.statistics-box:first-child {
+    margin-left: 0; /* 去掉第一个图表左边距 */
+}
+
+.statistics-box:last-child {
+    margin-right: 0; /* 去掉最后一个图表右边距 */
+}
+
+.statistics-box h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.mode {
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    width: 160px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    background-color: var(--headerFont2);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.mode h2 {
+    margin: 0; /* 清除默认的 margin */
+    text-align: center; /* 确保文本内容居中 */
+}
+
+#chart2 {
+    width: 550px;
+    height: 450px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  #chart {
+    width: 550px;
+    height: 450px;
+    margin: 20px auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }

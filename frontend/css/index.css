@@ -1,0 +1,128 @@
+ /* 正文 */
+ .content-li.li1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-li.li1>.li1-box {
+  position: relative;
+  flex: 0 0 32%;
+  background-color: var(--headerCOlor);
+  min-height: 200px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px 20px;
+  box-sizing: border-box;
+
+}
+#visit-count{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+.li1-box>span {
+  /* margin-top: 25px; */
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--headerFont);
+  line-height: 20px;
+  display: inline-block;
+}
+
+.li1-box>span.tag{
+  color: var(--mainColor);
+  font-size: 18px;
+}
+
+.li1-box>p {
+  /* text-transform: uppercase; */
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--headerFont);
+  transition: .4s ease-in-out;
+  margin: 0px;
+}
+
+/* 公共 */
+.content-li>h3 {
+  display: flex;
+  align-items: center;
+  color: var(--headerFont);
+}
+
+.content-li .borderbotm {
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* 第二块 */
+
+.li2-box {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: -120px;
+  text-align: center;
+  padding: 40px;
+  box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);
+}
+
+.li2-box blockquote::after {
+  margin: 0;
+  width: 50px;
+  color: var(--mainColor);
+  line-height: 55px;
+  content: '"';
+  position: absolute;
+  bottom: -40px;
+  right: -25px;
+  font-size: 54px;
+}
+
+.li2-box blockquote::before {
+  margin: 0;
+  color: var(--mainColor);
+  width: 50px;
+  line-height: 55px;
+  content: '"';
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  font-size: 54px;
+}
+
+.li2-box blockquote {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: block;
+  color: var(--headerFont);
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+    /* 手机*/
+    @media screen and (max-width: 550px) {
+      .content-li{
+        display: block;
+      }
+       .li1{
+        display: block !important;
+      }
+      .li4-box{
+        display: block;
+      }
+      .li6-box{
+        display: block;
+      }
+      .li7-box{
+        display: block;
+      }
+      .li5box-car{
+        width:auto;
+      }
+    }

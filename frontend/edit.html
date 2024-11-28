@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>zhiyog</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/thanks.css">
+  <link rel="stylesheet" href="./css/edit.css">
+</head>
+
+<body>
+
+  <!-- 主要页面 -->
+  <div class="box">
+    <!-- 顶部栏 -->
+
+    <section id="zhiyog" class="content-container-transition">
+      <div class="navigation" style=" background-image: url('../img/editback.jpg');">
+        <div class="nav-titleBox co zz">
+          <!-- 占位符 -->
+          <div class="co-left"></div>
+          <!-- 标题 -->
+          <div class="co-right ">
+            <h1>
+              It's<br>
+              the edit page!
+            </h1>
+            <a class="buttom navbtn">learn more
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+    <!-- 主要内容 -->
+    <div class="container content" id="content">
+      <!-- 占位符 -->
+      <div class="co-left">
+        <!-- 简历吸盘 -->
+        <div class="me-card carbox borderbefore" id="mycard">
+          <div class="mecar-title">
+            <div class="me-image">
+              <span class="status">
+                <i>zhiyog</i>
+              </span>
+              <img alt="zhiyog" id="edit_head_picture">
+              <input type="file" id="fileInput" style="display: none;" accept="image/*">
+            </div>
+
+            <h3>zhiyogのbiographical notes</h3>
+            <p class="me-hover">
+              <span id="edit_hover_text"></span>
+            </p>
+            
+          </div>
+
+          <!-- 毕业院校 -->
+          <div class="borderbotm"></div>
+          <div class="mecar-bottm">
+            <div>
+              <span class="mecarbottm-key">University</span>
+              <span class="mecarbottm-value">CSU</span>
+            </div>
+            <div>
+              <span class="mecarbottm-key">Grade</span>
+              <span class="mecarbottm-value">2022</span>
+            </div>
+            <div>
+              <span class="mecarbottm-key">Position</span>
+              <span class="mecarbottm-value">changsha</span>
+            </div>
+            <div>
+              <span class="mecarbottm-key">Career</span>
+              <span class="mecarbottm-value">Front-end Engineer</span>
+            </div>
+
+            <div>
+              <span class="mecarbottm-key">Email</span>
+              <span class="mecarbottm-value">3550245033@qq.com</span>
+            </div>
+          </div>
+
+          <div class="borderbotm"></div>
+          <div class="buttom-box ">
+            <a class="button" href="Mailto:3550245033@qq.com?Subject=title&amp;Body=content">Contact me!</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 右边 -->
+      <div class="content-li li1" style="margin-left: 20px;">
+        <div class="li1-box borderbefore">
+            <span>Projects</span><span class="tag">↓</span>
+            <div class="borderbotm"></div>
+            <div class="list-items" id="projects-list">
+            </div>
+            <button class="add-item-btn" onclick="addItem('projects')">+</button>
+        </div>
+    
+        <div class="li1-box borderbefore">
+            <span>Code Stacks</span><span class="tag">↓</span>
+            <div class="borderbotm"></div>
+            <div class="list-items" id="codeStacks-list">
+            </div>
+            <button class="add-item-btn" onclick="addItem('codeStacks')">+</button>
+        </div>
+    
+        <div class="li1-box borderbefore">
+            <span>Awards</span><span class="tag">↓</span>
+            <div class="borderbotm"></div>
+            <div class="list-items" id="awards-list">
+            </div>
+            <button class="add-item-btn" onclick="addItem('awards')">+</button>
+        </div>
+       
+    </div>
+    
+    </div>
+    <div class="content-li li2">
+      <h3>
+        <div class="borderbotm2"></div>
+      </h3>
+      <div class="carbox li2-box">
+        <blockquote id="edit_quote">
+          I hope I could keep advancing and let my life shine as a precious stone.and let my life shine as a
+          precious stone.
+        </blockquote>
+        
+      </div>
+    </div>
+
+  
+  <footer class="footer">
+    <p>Copyright © 2024 zhiyog</p>
+    <p>Powered by zhiyog</p>
+  </footer>
+
+</body>
+<script src="./js/edit.js"></script>
+<script src="./js/edit2.js"></script>
+</html>
+

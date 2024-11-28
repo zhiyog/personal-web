@@ -1,0 +1,71 @@
+.fun{
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 确保 mode 在顶部 */
+    width: 75%;
+    padding: 20px 20px 50px 20px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--headerFont2);
+    
+}
+.fun-main{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game {
+    width: 320px;
+    margin:0 10px 50px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加平滑过渡效果 */
+    background: linear-gradient(135deg, #ffffff, #e0e0e0); /* 默认背景渐变 */
+    position: relative; /* 为伪元素定位 */
+    overflow: hidden; /* 确保伪元素不会溢出 */
+}
+.music{
+    width: 320px;
+    margin: 0 10px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加平滑过渡效果 */
+    background: linear-gradient(135deg, #ffffff, #e0e0e0); /* 默认背景渐变 */
+    position: relative; /* 为伪元素定位 */
+    overflow: hidden; /* 确保伪元素不会溢出 */
+}
+
+/* 鼠标悬停效果 */
+.music:hover, .game:hover  {
+    transform: scale(1.05); /* 放大效果 */
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7); /* 明亮阴影 */
+    background: linear-gradient(135deg, #ffffff, #d1e9ff); /* 鼠标悬停背景变化 */
+}
+
+/* 锃亮的光效 */
+.music::before, .game::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    transition: top 0.5s ease, left 0.5s ease;
+}
+
+/* 悬停触发光效动画 */
+.music:hover::before, .game:hover::before {
+    top: 100%;
+    left: 100%;
+}

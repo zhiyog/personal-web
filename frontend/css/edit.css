@@ -1,0 +1,89 @@
+   /* 容器样式 */
+   #projects-list, #codeStacks-list, #awards-list {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #00283A;
+    border-radius: 8px;
+}
+
+/* 列表项样式 */
+#projects-list p, #codeStacks-list p, #awards-list p {
+    position: relative;
+    margin: 5px 0;
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #00283A;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+#projects-list p:hover, #codeStacks-list p:hover, #awards-list p:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #989999;
+}
+.delete-btn {
+
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* 宽度和高度相等，形成圆形 */
+    height: 20px;
+    display: flex; /* 居中对齐文字 */
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* 控制字体大小 */
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff9d9d;
+    border: none;
+    border-radius: 50%; /* 圆形边角 */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 悬停和按下效果 */
+.delete-btn:hover {
+    background-color: #ff6b6b;
+    transform: scale(1.1); /* 放大效果 */
+}
+
+.delete-btn:active {
+    background-color: #d43a3a;
+    transform: scale(0.9); /* 点击缩小 */
+}
+.add-item-btn {
+    right: 0px;
+    left: 41%;
+    position: relative; /* 根据需求调整为 fixed/absolute */
+    width: 30px; /* 确保宽度适中 */
+    height: 30px; /* 确保高度与宽度相等 */
+    display: flex; /* 使用 Flexbox 对齐 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    font-size: 18px; /* 字体大小适中 */
+    font-weight: bold; /* 字体加粗 */
+    line-height: 1; /* 确保没有额外的行距 */
+    color: #fff; /* 字体颜色为白色 */
+    background-color: #9bd89b; /* 背景颜色绿色 */
+    border: none; /* 去掉默认边框 */
+    border-radius: 50%; /* 圆形按钮 */
+    cursor: pointer; /* 鼠标指针样式 */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 悬停效果 */
+.add-item-btn:hover {
+    background-color: #68c568; /* 变亮的绿色 */
+    transform: scale(1.1); /* 放大效果 */
+}
+
+/* 点击效果 */
+.add-item-btn:active {
+    background-color: #46a946; /* 深绿色 */
+    transform: scale(0.9); /* 点击缩小 */
+}
+

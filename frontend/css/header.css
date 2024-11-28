@@ -1,0 +1,133 @@
+/* 顶部栏目 */
+.header {
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: rgba(255, 255, 255, 0); /* 背景透明 */
+    backdrop-filter: blur(1px); /* 背景模糊效果 */
+    transition: top 0.5s ease; /* 添加平滑过渡效果 */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+  
+  
+  /* 下面的装饰 */
+  .borderafter::after{
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    right: 0px;
+    height: 8px;
+    /* background-color: #00283A; */
+    background-color: var(--borderline);
+    border-radius: 0% 0% 5px 5px;
+    opacity: .3;
+  }
+  
+  /* 上面的装饰 */
+  .borderbefore::before{
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 8%;
+    right: 8%;
+    height: 10px;
+    background-color: var(--borderline);
+    border-radius: 5px 5px 0% 0%;
+    opacity: .3;
+  }
+
+.nav {
+    display: flex;
+    padding: 0px 12.5%; /* 上下内边距 */
+    display: flex; /* 设置横向的flex布局 */
+    justify-content: center; /* 图标在父容器中居中对齐 */
+    align-items: center; /* 图标垂直居中 */
+    gap: 2%; /* 调整图标之间的横向间距 */
+}
+
+.nav .logo {
+    display: flex; /* 设置横向的flex布局 */
+    justify-content: center; /* 图标在父容器中居中对齐 */
+    align-items: center; /* 图标垂直居中 */
+    padding: 0 0 0 5.2% ;
+
+}
+
+.header>div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* 顶部导航栏 */
+  .header-nav {
+    display: inline-block;
+  }
+  
+  .header-nav>li.active::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    right: 0px;
+    border-radius: 10px;
+    height: 3px;
+    background-color: var(--mainColor);
+    transition: .4s ease-in-out;
+  }
+  
+  .header-nav>li {
+    padding: 0 30px;
+    position: relative;
+    transition: color .6s ease-in-out;
+    box-sizing: border-box;
+  }
+  
+  .header-nav>li:hover {
+    color: var(--mainColor);
+  }
+  
+.nav a {
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    padding: 0 1.2%;
+    display: flex;
+    align-items: center; /* 确保图标和文字垂直居中 */
+    flex-direction: row; /* 确保图标和文字水平排列 */
+    transition: color 0.3s ease;
+}
+
+.nav .logo .icon {
+    width: 28px; /* 设置图标的宽度 */
+    height: 28px; /* 设置图标的高度 */
+}
+
+.nav a:hover {
+    color: var(--mainColor);
+}
+
+.nav .zhiyog-link {
+    font-size: 26px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav .zhiyog-link:hover {
+    color: var(--mainColor); /* 鼠标悬停时亮蓝色 */
+    transform: scale(1.2); /* 放大效果 */
+}
+
+.nav .logo a{
+    padding: 10px;
+}
+
+.content-container-transition{
+    transition: all 0.5s ease;
+}
