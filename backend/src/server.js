@@ -118,7 +118,6 @@ const uploadDir = path.join(__dirname, '../../frontend/img');
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
-
 // 设置 multer 存储配置
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -138,8 +137,12 @@ app.use('/img', express.static(uploadDir));
 // 处理文件上传的路由
 app.post('/upload', upload.single('head_picture'), (req, res) => {
   if (req.file) {
-    // 文件上传成功后返回成功消息，包含文件路径
-    res.json({ message: '文件上传成功', filePath: `/img/${req.file.originalname}` });
+    // 构建返回的文件访问路径
+    const filePath = `/img/${req.file.filename}`;
+  
+
+    // 返回成功消息
+    res.json({ message: '文件上传成功', filePath });
   } else {
     res.status(400).json({ message: '没有文件上传' });
   }
