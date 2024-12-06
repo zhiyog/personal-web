@@ -17,6 +17,10 @@ SQ lite3
 ```
 npm install sqlite3
 ```
+multer下载
+```
+npm install multer
+```
 
 # 可能的漏洞：
 1. localstorage的使用；
