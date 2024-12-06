@@ -11,7 +11,7 @@ npm install express
 ```
 bcrypt加密
 ```
-npm install express
+npm install bcrypt
 ```
 SQ lite3
 ```
