@@ -15,7 +15,7 @@ npm install bcrypt
 ```
 SQ lite3
 ```
-npm install sqlite3
+npm install sqlite3@5.0.0 -g #如果不需要全局安装的话，把-g去掉
 ```
 multer下载
 ```
