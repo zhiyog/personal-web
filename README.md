@@ -9,6 +9,10 @@ express框架
 ```
 npm install express
 ```
+session
+```
+npm install express-session
+```
 bcrypt加密
 ```
 npm install bcrypt
