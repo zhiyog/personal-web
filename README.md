@@ -31,6 +31,8 @@ npm install multer
 3. 其他拓展
 # 网站整体架构
 ![web](https://github.com/user-attachments/assets/b57719cd-2d40-4864-9d22-e47bd96da5a4)
+# 文件描述
+![image](https://github.com/user-attachments/assets/e41963d9-77f6-4880-8df8-65f504711062)
 # 网站测试
 ![image](https://github.com/user-attachments/assets/2156a4a8-ce5c-4389-a407-093c5031bee7)
 ![image](https://github.com/user-attachments/assets/d6cdce2d-b451-422f-b3e0-a0988c0517da)
