@@ -1,29 +1,12 @@
 # 个人网站
 前端三件套＋后端node，采用express和SQ lite3以及echarts，非常适合简单全栈开发练手
 # 环境配置
-后端node环境
-```
-node官网
-```
-express框架
-```
-npm install express
-```
-session
-```
-npm install express-session
-```
-bcrypt加密
-```
-npm install bcrypt
-```
 SQ lite3
 ```
 npm install sqlite3@5.0.0 -g #如果不需要全局安装的话，把-g去掉
 ```
-multer下载
 ```
-npm install multer
+npm install
 ```
 # 可能的漏洞：
 1. localstorage的使用；
